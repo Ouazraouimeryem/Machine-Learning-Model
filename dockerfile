@@ -17,7 +17,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY intents.json /app/
 
 # Run data preprocessing
-RUN python preprocess_data.py
+RUN python preprocess.py
 
 # Train the model
 RUN python train_model.py
