@@ -4,16 +4,16 @@ FROM tensorflow/tensorflow:latest
 
 
 # Copy only the necessary files into the container at /app
-COPY preprocess.py 
-COPY train_model.py 
-COPY predict_response.py 
-COPY requirements.txt 
+COPY preprocess.py /app/
+COPY train_model.py /app/
+COPY predict_response.py /app/
+COPY requirements.txt /app/
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy only the necessary data file (intents.json) into the container at /app
-COPY intents.json 
+COPY intents.json /app/
 
 # Run data preprocessing
 RUN python preprocess.py
