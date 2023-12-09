@@ -40,7 +40,7 @@ jobs:
         docker push imagemlops
 
     - name: Execute Python scripts in Docker container
-      run: docker run imagemlops python preprocess_data.py
+      run: docker run imagemlops python preprocess.py
 
     - name: Execute training script
       run: docker run imagemlops python train_model.py
