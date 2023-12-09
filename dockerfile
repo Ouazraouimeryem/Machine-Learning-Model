@@ -5,7 +5,10 @@ FROM tensorflow/tensorflow:latest
 WORKDIR /app
 
 # Copy only the necessary files into the container at /app
-COPY preprocess_data.py train_model.py predict_response.py requirements.txt /app/
+COPY preprocess_data.py /app/
+COPY train_model.py /app/
+COPY predict_response.py /app/
+COPY requirements.txt /app/
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
