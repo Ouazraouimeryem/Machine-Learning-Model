@@ -1,20 +1,19 @@
 # Use an official TensorFlow runtime as a parent image
 FROM tensorflow/tensorflow:latest
 
-# Set the working directory to /app
-WORKDIR /app
+
 
 # Copy only the necessary files into the container at /app
-COPY preprocess.py /app/
-COPY train_model.py /app/
-COPY predict_response.py /app/
-COPY requirements.txt /app/
+COPY preprocess.py 
+COPY train_model.py 
+COPY predict_response.py 
+COPY requirements.txt 
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy only the necessary data file (intents.json) into the container at /app
-COPY intents.json /app/
+COPY intents.json 
 
 # Run data preprocessing
 RUN python preprocess.py
