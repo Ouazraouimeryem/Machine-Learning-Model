@@ -5,7 +5,7 @@ FROM tensorflow/tensorflow:latest
 WORKDIR /app
 
 # Copy only the necessary files into the container at /app
-COPY preprocess_data.py /app/
+COPY preprocess.py /app/
 COPY train_model.py /app/
 COPY predict_response.py /app/
 COPY requirements.txt /app/
