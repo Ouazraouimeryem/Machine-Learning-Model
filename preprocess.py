@@ -7,7 +7,7 @@ nltk.download('punkt')
 nltk.download('wordnet')
 
 # Charger les données
-data_file = open('/content/intents.json').read()
+data_file = open('intents.json').read()
 intents = json.loads(data_file)
 
 # Initialiser les variables
