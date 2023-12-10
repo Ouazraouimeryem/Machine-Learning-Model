@@ -55,7 +55,7 @@ jobs:
       run: docker run -e USER_INPUT="Hello, chatbot!" imagemlops python /app/predict_response.py
 
     - name: Display Docker logs
-      run: docker logs $(docker ps -lq)
+      run: echo "Displaying Docker logs" && docker logs $(docker ps -lq)
 
     - name: Clean up
       run: docker system prune 
