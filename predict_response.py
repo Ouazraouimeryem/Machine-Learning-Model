@@ -103,17 +103,17 @@ def chatbot_response(text):
     return res
 
 
-start = True
+#start = True
 
-while start:
+#while start:
 
-    query = input('Enter Message:') if sys.stdin.isatty() else sys.stdin.readline().rstrip()
-    if query in ['quit','exit','bye']:
-        start = False
-        continue
+    #query = input('Enter Message:') if sys.stdin.isatty() else sys.stdin.readline().rstrip()
+    #if query in ['quit','exit','bye']:
+        #start = False
+        #continue
     #try:
-    else{    
-        res = chatbot_response(query)
-        print(res)}
+    #else{    
+        #res = chatbot_response(query)
+        #print(res)}
     #except:
         #print('You may need to rephrase your question.')
