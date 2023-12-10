@@ -43,13 +43,13 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Execute Python scripts in Docker container
-      run: docker run imagemlops python preprocess.py
+      run: docker run imagemlops python /app/preprocess.py
 
     - name: Execute training script
-      run: docker run imagemlops python train_model.py
+      run: docker run imagemlops python /app/train_model.py
 
     - name: Execute prediction script (optional)
-      run: docker run imagemlops python predict_response.py
+      run: docker run imagemlops python /app/predict_response.py
 
     - name: Clean up
       run: docker system prune --force
