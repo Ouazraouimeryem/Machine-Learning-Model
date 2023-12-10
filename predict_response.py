@@ -111,8 +111,9 @@ while start:
     if query in ['quit','exit','bye']:
         start = False
         continue
-    try:
+    #try:
+    else{    
         res = chatbot_response(query)
-        print(res)
+        print(res)}
     #except:
         #print('You may need to rephrase your question.')
