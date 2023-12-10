@@ -15,7 +15,7 @@ COPY requirements.txt /app/
  RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # Copy only the necessary data file (intents.json) into the container at /app
-COPY intents.json /app/
+COPY intents.json /app/intents.json
 
 # Run data preprocessing
 RUN python /app/preprocess.py
