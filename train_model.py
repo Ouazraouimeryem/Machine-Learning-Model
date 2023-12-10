@@ -72,6 +72,7 @@ Now, we will create the training data in which we will provide the input and the
 """
 
 # create our training data
+# create our training data
 training = []
 # create an empty array for our output
 output_empty = [0] * len(classes)
@@ -83,21 +84,23 @@ for doc in documents:
     pattern_words = doc[0]
     # convert pattern_words in lower case
     pattern_words = [lemmatizer.lemmatize(word.lower()) for word in pattern_words]
-    # create bag of words array,if word match found in current pattern then put 1 otherwise 0.[row * colm(263)]
-    for w in words:
-        bag.append(1) if w in pattern_words else bag.append(0)
+    # create bag of words array, if word match found in current pattern then put 1 otherwise 0.[row * colm(263)]
+    bag = [1 if w in pattern_words else 0 for w in words]
 
-    # in output array 0 value for each tag ang 1 value for matched tag.[row * colm(8)]
+    # in output array 0 value for each tag and 1 value for matched tag.[row * colm(8)]
     output_row = list(output_empty)
     output_row[classes.index(doc[1])] = 1
 
-    training.append([bag, output_row])
+    # Modification : append le tuple (bag, output_row) à la liste training
+    training.append((bag, output_row))
+
 # shuffle training and turn into np.array
 random.shuffle(training)
-training = np.array(training)
-# create train and test. X - patterns(words), Y - intents(tags)
-train_x = list(training[:,0])
-train_y = list(training[:,1])
+# Modification : extraire les features (X) et les labels (Y) du tuple
+train_x, train_y = zip(*training)
+# convertir en np.array
+train_x = np.array(train_x)
+train_y = np.array(train_y)
 print("Training data created")
 
 from tensorflow.python.framework import ops
