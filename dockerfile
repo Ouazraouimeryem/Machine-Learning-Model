@@ -7,18 +7,12 @@ FROM tensorflow/tensorflow:latest
 COPY preprocess.py /app/
 COPY train_model.py /app/
 COPY predict_response.py /app/
-COPY requirements.txt /app/
+COPY requirements.txt 
 
-# Afficher le contenu du répertoire pour le débogage
-RUN ls /app/
 
-# Se déplacer dans le répertoire /app
-WORKDIR /app/
 
-# Afficher à nouveau le contenu pour le débogage
-RUN ls /app/
 # Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt /app/
+RUN pip install --no-cache-dir -r requirements.txt 
 
 # Copy only the necessary data file (intents.json) into the container at /app
 COPY intents.json /app/
