@@ -18,13 +18,13 @@ COPY requirements.txt /app/
 COPY intents.json /app/
 
 # Run data preprocessing
-RUN python preprocess.py
+RUN python /app/preprocess.py
 
 # Train the model
-RUN python train_model.py
+RUN python /app/train_model.py
 
 # Make port 80 available to the world outside this container
 EXPOSE 80
 
 # Run predict_response.py when the container launches
-CMD ["python", "predict_response.py"]
+CMD ["python", "/app/predict_response.py"]
