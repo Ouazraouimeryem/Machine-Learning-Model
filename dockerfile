@@ -12,7 +12,7 @@ COPY requirements.txt /app/
 
 
 # Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt 
+ RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # Copy only the necessary data file (intents.json) into the container at /app
 COPY intents.json /app/
