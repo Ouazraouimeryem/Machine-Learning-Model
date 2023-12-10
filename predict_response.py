@@ -3,6 +3,7 @@ import json
 import pickle
 import nltk
 import random
+import sys
 
 # Charger le modèle
 model = load_model('chatbot_model.h5')
@@ -106,7 +107,7 @@ start = True
 
 while start:
 
-    query = input('Enter Message:')
+    query = input('Enter Message:') if sys.stdin.isatty() else sys.stdin.readline().rstrip()
     if query in ['quit','exit','bye']:
         start = False
         continue
