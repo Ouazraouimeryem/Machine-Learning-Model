@@ -114,5 +114,5 @@ while start:
     try:
         res = chatbot_response(query)
         print(res)
-    except:
-        print('You may need to rephrase your question.')
+    #except:
+        #print('You may need to rephrase your question.')
