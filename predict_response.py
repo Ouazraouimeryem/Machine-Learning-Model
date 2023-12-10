@@ -103,6 +103,26 @@ def chatbot_response(text):
     return res
 
 
+
+start = True
+
+while start:
+    # Utilisez une variable d'environnement ou lisez à partir d'un fichier
+    query = os.getenv('USER_INPUT') or input('Enter Message:') if sys.stdin.isatty() else sys.stdin.readline().rstrip()
+    
+    if not query:
+        # Si l'utilisateur n'entre rien, sortez de la boucle
+        start = False
+        continue
+    if query.lower() in ['quit', 'exit', 'bye']:
+        # Si l'utilisateur entre l'une des phrases de sortie, sortez de la boucle
+        start = False
+        continue
+    try:
+        res = chatbot_response(query)
+        print(res)
+    except:
+        print('You may need to rephrase your question.')
 #start = True
 
 #while start:
