@@ -5,12 +5,12 @@ import nltk
 import random
 
 # Charger le modèle
-model = load_model('/app/chatbot_model.h5')
+model = load_model('chatbot_model.h5')
 
 # Charger les données
 intents = json.loads(open('/app/intents.json').read())
-words = pickle.load(open('/app/words.pkl', 'rb'))
-classes = pickle.load(open('/app/classes.pkl', 'rb'))
+words = pickle.load(open('words.pkl', 'rb'))
+classes = pickle.load(open('classes.pkl', 'rb'))
 lemmatizer = nltk.stem.WordNetLemmatizer()
 
 # Définir des méthodes utilitaires
