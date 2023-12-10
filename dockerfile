@@ -7,7 +7,7 @@ FROM tensorflow/tensorflow:latest
 COPY preprocess.py /app/
 COPY train_model.py /app/
 COPY predict_response.py /app/
-COPY requirements.txt 
+COPY requirements.txt /app/
 
 
 
