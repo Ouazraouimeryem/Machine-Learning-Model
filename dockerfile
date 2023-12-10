@@ -9,7 +9,14 @@ COPY train_model.py /app/
 COPY predict_response.py /app/
 COPY requirements.txt /app/
 
+# Afficher le contenu du répertoire pour le débogage
+RUN ls /app/
+
+# Se déplacer dans le répertoire /app
 WORKDIR /app/
+
+# Afficher à nouveau le contenu pour le débogage
+RUN ls /app/
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
